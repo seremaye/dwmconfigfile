@@ -1,0 +1,4 @@
+#!/bin/sh
+veri=$(cat /sys/class/net/wlp3s0/statistics/tx_bytes)
+veri_mb=$(awk "BEGIN {printf \"%.2f\", $veri / (1024 * 1024)}")
+echo "$veri_mb MB"
